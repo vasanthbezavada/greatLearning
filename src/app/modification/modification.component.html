@@ -1,0 +1,52 @@
+
+<div style="width: 70%; float: left;">
+    <h1>List of users</h1>
+<table class="table table-striped " style="float: left;">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>User Name</th>
+            <th>Password (encrypted)</th>
+            <th>is enabled</th>
+            <th>Authority</th>
+            <th>remove</th>
+            <th>change</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of personList">
+            <td>{{user.userName}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.enabled}}</td>
+            <td>{{user.authority}}</td>
+            <td><button class="btn btn-danger" (click)="delete(user.id)">delete</button></td>
+            <td><button class="btn btn-success" (click)="change(user)">change</button></td>
+            <!-- <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td> -->
+          </tr>
+    </tbody>
+    </table>
+</div>
+<div *ngIf="visible" style="width: 30%;float: right;padding-left: 20px;">
+    <div class="container">
+        <button type="button" class="close" aria-label="Close" (click)="visible=false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <div >
+        <h2 >Edit</h2>
+        </div>
+
+        <form >
+                <label for="Name">id</label><br>
+                <input type="number" [(ngModel)]="person.userName" name="id" id="name"><br>
+                <label for="fName">First Name</label>
+                <br>
+                <input type="text" [(ngModel)]="person.password" name="first" id="fname"><br>
+                <label for="lName">Last Name</label><br>
+                <input type="text" [(ngModel)]="person.isEnabled" name="la" id="lname"><br>
+                <label for="wName">Technology</label><br>
+                <input type="text" [(ngModel)]="person.authority" name="firs" id="wname"><br>
+                <label for="eName">Experience in words</label><br>
+                <input class="btn btn-success" type="submit" (click)="edited()">
+        </form>
+    </div>
+</div>

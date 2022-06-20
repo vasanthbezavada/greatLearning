@@ -1,0 +1,16 @@
+<h1>User registration</h1>
+<div class="container">
+    <form >
+            <label for="username">User Name</label><br>
+            <input type="number" [(ngModel)]="person.userName" name="id" id="name"><br>
+            <label for="password">password</label>
+            <br>
+            <input type="text" [(ngModel)]="person.password" name="first" id="fname"><br>
+            <label for="is enabled">is enabled</label><br>
+            <input type="text" [(ngModel)]="person.isEnabled" name="la" id="lname"><br>
+            <label for="authority">Authority</label><br>
+            <input type="text" [(ngModel)]="person.authority" name="firs" id="wname"><br>
+            <input class="btn btn-success" type="submit" (click)="registerNow()">
+    </form>
+</div>
+<h2>{{sucessMessage}}</h2>
